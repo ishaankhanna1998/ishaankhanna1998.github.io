@@ -1,3 +1,4 @@
 Portfolio site template
 
-Generated with Claude Code
+Generated with ChatGPT code
+
