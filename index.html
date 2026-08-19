@@ -106,6 +106,10 @@
         padding: 24px;
       }
 
+      .panel p + p {
+        margin-top: 16px;
+      }
+
       /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
       .cards {
         display: grid;
@@ -120,16 +124,12 @@
         background: #fff;
       }
 
-      /* Empty space for project photo */
       .card-photo {
+        display: block;
+        width: 100%;
         height: 120px;
-        background: #ddd;
-        border-bottom: 1px dashed #aaa;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 12px;
+        object-fit: cover;
+        border-bottom: 1px solid #eee;
       }
 
       .card-text {
@@ -142,6 +142,11 @@
       .card-text p {
         font-size: 14px;
         color: #555;
+      }
+      .card-text .project-tools {
+        margin-top: 10px;
+        color: #777;
+        font-size: 12px;
       }
 
       /* ---------- MOBILE: stack cards vertically ---------- */
@@ -189,8 +194,24 @@
       <div id="about" class="tab-content active">
         <div class="panel">
           <p>
-            Analytics professional with three years of work experience. 
-            Looking for opportunities in data analytics and consulting.
+            Analytics professional with three years of experience turning complex data
+            into actionable business insights across healthcare, insurance, and risk
+            analytics. I’ve built Python- and R-based analytical solutions, developed
+            machine learning models, and translated technical findings into recommendations
+            for both client leadership and non-technical stakeholders.
+          </p>
+          <p>
+            At EXL, my work contributed to $450K in annual savings for a U.S. health
+            insurer and improved the identification of policyholders with critical
+            conditions by 30%. My experience spans fraud analytics, predictive modeling,
+            KPI reporting, data visualization, and large-scale data analysis using Python,
+            R, SQL, Excel, and Tableau.
+          </p>
+          <p>
+            I’m currently pursuing a Master of Management in Analytics at McGill University
+            and am interested in data analytics and data science opportunities where I can
+            combine rigorous quantitative analysis with business problem-solving,
+            particularly in consulting and financial services.
           </p>
         </div>
       </div>
@@ -200,28 +221,55 @@
         <div class="cards">
           <!-- CARD 1 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
+            <img
+              class="card-photo"
+              src="assets/gender_wage_disparity_europe_map.png"
+              alt="Map illustrating gender wage disparity across Europe"
+            />
             <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+              <h3>Gender Wage Disparity Across the EU</h3>
+              <p>
+                Analyzed gender wage disparities across European Union countries using
+                SQL and Pandas to clean, combine, and explore economic and labor datasets
+                and identify trends across countries and time periods.
+              </p>
+              <p class="project-tools">SQL · Python · Pandas</p>
             </div>
           </div>
 
           <!-- CARD 2 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
+            <img
+              class="card-photo"
+              src="assets/cybersecurity_losses_generic.png"
+              alt="Visualization representing cybersecurity-related financial losses"
+            />
             <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+              <h3>Cybersecurity Losses in the Insurance Industry</h3>
+              <p>
+                Analyzed the financial impact of cybersecurity incidents on the insurance
+                industry using R. Applied Decision Tree and Naive Bayes machine learning
+                techniques to identify patterns associated with cyber risk and financial losses.
+              </p>
+              <p class="project-tools">R · Decision Trees · Naive Bayes</p>
             </div>
           </div>
 
           <!-- CARD 3 -->
           <div class="card">
-            <div class="card-photo">Project Image</div>
+            <img
+              class="card-photo"
+              src="assets/cost_of_higher_education_us_map.png"
+              alt="Map visualizing higher education costs across the United States"
+            />
             <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
+              <h3>Cost of Higher Education in the U.S.</h3>
+              <p>
+                Developed an interactive geographical visualization in R Shiny to explore
+                the cost of higher education across the United States and compare geographic
+                patterns in education costs.
+              </p>
+              <p class="project-tools">R · Shiny · Data Visualization</p>
             </div>
           </div>
         </div>
