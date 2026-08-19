@@ -19,15 +19,15 @@
 
       body {
         font-family: Arial, Helvetica, sans-serif;
-        color: #222;
-        background: #f7f7f7;
+        color: #172033;
+        background: #f6f8fb;
         line-height: 1.5;
       }
 
       .container {
-        max-width: 900px;
+        max-width: 1180px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 48px 24px 64px;
       }
 
       /* ---------- HEADER (photo + name + subheading) ---------- */
@@ -38,13 +38,15 @@
 
       /* Empty space for photo — replace with your own <img> if you like */
       .photo {
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
         border-radius: 50%;
-        margin: 0 auto 16px;
+        margin: 0 auto 18px;
         display: block;
         object-fit: cover;
-        object-position: center 25%;
+        object-position: center 18%;
+        border: 4px solid #fff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
       }
 
       header h1 {
@@ -78,17 +80,26 @@
 
       .tab-button {
         padding: 10px 22px;
-        border: 1px solid #ccc;
+        border: 1px solid #dbe2ea;
         background: #fff;
+        color: #334155;
         cursor: pointer;
         font-size: 15px;
-        border-radius: 4px;
+        font-weight: 600;
+        border-radius: 999px;
+        transition: all 0.2s ease;
+      }
+
+      .tab-button:hover {
+        border-color: #9fb4cd;
+        transform: translateY(-1px);
       }
 
       .tab-button.active {
-        background: #2c3e50;
+        background: #123d68;
         color: #fff;
-        border-color: #2c3e50;
+        border-color: #123d68;
+        box-shadow: 0 6px 16px rgba(18, 61, 104, 0.18);
       }
 
       /* ---------- TAB CONTENT ---------- */
@@ -100,59 +111,128 @@
       }
 
       .panel {
+        max-width: 900px;
+        margin: 0 auto;
         background: #fff;
-        border: 1px solid #eee;
-        border-radius: 6px;
-        padding: 24px;
+        border: 1px solid #e5eaf0;
+        border-radius: 16px;
+        padding: 28px 30px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
       }
 
       .panel p + p {
         margin-top: 16px;
       }
 
-      /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
+      /* ---------- PROJECT CARDS ---------- */
       .cards {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        align-items: stretch;
       }
 
       .card {
-        border: 1px solid #eee;
-        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
         overflow: hidden;
         background: #fff;
+        border: 1px solid #dfe5ec;
+        border-radius: 18px;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.11);
       }
 
       .card-photo {
         display: block;
         width: 100%;
-        height: 120px;
+        height: 210px;
         object-fit: cover;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #e6ebf1;
+        background: #f7f9fc;
+      }
+
+      .card-photo.map-photo {
+        object-fit: contain;
+        padding: 12px;
       }
 
       .card-text {
-        padding: 14px;
-      }
-      .card-text h3 {
-        font-size: 16px;
-        margin-bottom: 6px;
-      }
-      .card-text p {
-        font-size: 14px;
-        color: #555;
-      }
-      .card-text .project-tools {
-        margin-top: 10px;
-        color: #777;
-        font-size: 12px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 24px 24px 22px;
       }
 
-      /* ---------- MOBILE: stack cards vertically ---------- */
+      .card-text h3 {
+        margin-bottom: 12px;
+        color: #111827;
+        font-size: 24px;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      .card-text > p {
+        color: #4b5563;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .project-tools {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: auto;
+        padding-top: 22px;
+      }
+
+      .project-tools span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 6px 12px;
+        color: #174a84;
+        background: #eaf2fb;
+        border: 1px solid #d7e6f7;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      /* ---------- RESPONSIVE PROJECT GRID ---------- */
+      @media (max-width: 900px) {
+        .cards {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
       @media (max-width: 640px) {
+        .container {
+          padding: 32px 16px 48px;
+        }
+
+        .photo {
+          width: 135px;
+          height: 135px;
+        }
+
         .cards {
           grid-template-columns: 1fr;
+        }
+
+        .card-photo {
+          height: 220px;
+        }
+
+        .card-text h3 {
+          font-size: 22px;
         }
       }
     </style>
@@ -222,7 +302,7 @@
           <!-- CARD 1 -->
           <div class="card">
             <img
-              class="card-photo"
+              class="card-photo map-photo"
               src="assets/gender_wage_disparity_europe_map.png"
               alt="Map illustrating gender wage disparity across Europe"
             />
@@ -233,7 +313,11 @@
                 SQL and Pandas to clean, combine, and explore economic and labor datasets
                 and identify trends across countries and time periods.
               </p>
-              <p class="project-tools">SQL · Python · Pandas</p>
+              <div class="project-tools" aria-label="Project tools">
+                <span>SQL</span>
+                <span>Python</span>
+                <span>Pandas</span>
+              </div>
             </div>
           </div>
 
@@ -251,14 +335,18 @@
                 industry using R. Applied Decision Tree and Naive Bayes machine learning
                 techniques to identify patterns associated with cyber risk and financial losses.
               </p>
-              <p class="project-tools">R · Decision Trees · Naive Bayes</p>
+              <div class="project-tools" aria-label="Project tools">
+                <span>R</span>
+                <span>Decision Trees</span>
+                <span>Naive Bayes</span>
+              </div>
             </div>
           </div>
 
           <!-- CARD 3 -->
           <div class="card">
             <img
-              class="card-photo"
+              class="card-photo map-photo"
               src="assets/cost_of_higher_education_us_map.png"
               alt="Map visualizing higher education costs across the United States"
             />
@@ -269,7 +357,11 @@
                 the cost of higher education across the United States and compare geographic
                 patterns in education costs.
               </p>
-              <p class="project-tools">R · Shiny · Data Visualization</p>
+              <div class="project-tools" aria-label="Project tools">
+                <span>R</span>
+                <span>Shiny</span>
+                <span>Data Visualization</span>
+              </div>
             </div>
           </div>
         </div>
