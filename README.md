@@ -1,4 +1,4 @@
-Portfolio site template
+Ishaan Khanna's Portfolio
 
 Generated with ChatGPT code
 
