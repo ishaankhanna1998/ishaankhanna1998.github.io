@@ -253,6 +253,16 @@
         transition: transform 240ms ease, box-shadow 240ms ease;
       }
 
+      .card-link {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .card-link:focus-visible {
+        outline: 3px solid #1d4ed8;
+        outline-offset: 3px;
+      }
+
       .card:hover {
         box-shadow: 0 16px 34px rgba(15, 39, 71, 0.12);
         transform: translateY(-5px);
@@ -422,24 +432,16 @@
         <div class="panel">
           <div class="about-copy">
             <p>
-              Analytics professional with three years of experience turning complex data
-              into actionable business insights across healthcare, insurance, and risk
-              analytics. I’ve built Python- and R-based analytical solutions, developed
-              machine learning models, and translated technical findings into recommendations
-              for both client leadership and non-technical stakeholders.
+              I’m an analytics professional with three years of experience using data to solve business problems across healthcare, insurance, and risk analytics. I enjoy combining statistical modeling, machine learning, and analytical problem-solving with a strong understanding of the business decisions they support.
             </p>
             <p>
-              At EXL, my work contributed to $450K in annual savings for a U.S. health
-              insurer and improved the identification of policyholders with critical
-              conditions by 30%. My experience spans fraud analytics, predictive modeling,
-              KPI reporting, data visualization, and large-scale data analysis using Python,
-              R, SQL, Excel, and Tableau.
+              At EXL, I developed data-driven solutions that contributed to $450K in annual savings for a U.S. health insurer and improved the identification of policyholders with critical medical conditions by 30%. My experience includes predictive modeling, fraud analytics, data preparation, and communicating technical findings to business stakeholders.
             </p>
             <p>
-              I’m currently pursuing a Master of Management in Analytics at McGill University
-              and am interested in data analytics and data science opportunities where I can
-              combine rigorous quantitative analysis with business problem-solving,
-              particularly in consulting and financial services.
+              I’m currently pursuing a Master of Management in Analytics at McGill University, where I’m expanding my technical expertise and leading an analytics capstone project with a fertility clinic.
+            </p>
+            <p>
+              I’m particularly interested in applied data science, analytics consulting, and client-facing analytical roles that combine rigorous quantitative analysis with meaningful business impact.
             </p>
           </div>
           <div class="highlights" aria-label="Professional highlights">
@@ -464,76 +466,32 @@
         <div class="section-header">
           <h2>Selected Projects</h2>
           <p>
-            A selection of analytics, machine learning, and data visualization work spanning
-            economic research, cybersecurity risk, and higher education.
+            Analytics and machine learning projects, from problem framing to working models.
           </p>
         </div>
         <div class="cards">
           <!-- CARD 1 -->
-          <div class="card">
-            <img
-              class="card-photo map-photo"
-              src="assets/gender_wage_disparity_europe_map.png"
-              alt="Map illustrating gender wage disparity across Europe"
-            />
-            <div class="card-text">
-              <h3>Gender Wage Disparity Across the EU</h3>
-              <p>
-                Analyzed gender wage disparities across European Union countries using
-                SQL and Pandas to clean, combine, and explore economic and labor datasets
-                and identify trends across countries and time periods.
-              </p>
-              <div class="project-tools" aria-label="Project tools">
-                <span>SQL</span>
-                <span>Python</span>
-                <span>Pandas</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="card">
+          <a class="card card-link" href="/movie-poster-genre/">
             <img
               class="card-photo"
-              src="assets/cybersecurity_losses_generic.png"
-              alt="Visualization representing cybersecurity-related financial losses"
+              src="assets/movie_poster_genre.png"
+              alt="Illustrated posters showing the visual style of eight film genres"
             />
             <div class="card-text">
-              <h3>Cybersecurity Losses in the Insurance Industry</h3>
+              <h3>Predicting Film Genre from Movie Posters</h3>
               <p>
-                Analyzed the financial impact of cybersecurity incidents on the insurance
-                industry using R. Applied Decision Tree and Naive Bayes machine learning
-                techniques to identify patterns associated with cyber risk and financial losses.
+                Built a convolutional neural network in PyTorch that classifies a film's genre
+                from its poster alone, as a consistency check for movie marketing. Fine-tunes a
+                pretrained ResNet-50 on IMDb posters and uses Grad-CAM to show which visual cues
+                drive each prediction.
               </p>
               <div class="project-tools" aria-label="Project tools">
-                <span>R</span>
-                <span>Decision Trees</span>
-                <span>Naive Bayes</span>
+                <span>PyTorch</span>
+                <span>CNN</span>
+                <span>Computer Vision</span>
               </div>
             </div>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="card">
-            <img
-              class="card-photo map-photo"
-              src="assets/cost_of_higher_education_us_map.png"
-              alt="Map visualizing higher education costs across the United States"
-            />
-            <div class="card-text">
-              <h3>Cost of Higher Education in the U.S.</h3>
-              <p>
-                Developed an interactive geographical visualization in R Shiny to explore
-                the cost of higher education across the United States and compare geographic
-                patterns in education costs.
-              </p>
-              <div class="project-tools" aria-label="Project tools">
-                <span>R</span>
-                <span>Shiny</span>
-                <span>Data Visualization</span>
-              </div>
-            </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
